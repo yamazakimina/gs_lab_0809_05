@@ -1,6 +1,7 @@
 // この部分に必要な部分をimportします😊
 import Link from "next/link";
 import { client } from "../../libs/client";
+import { AiFillApple } from "react-icons/ai";
 
 // SSGでデータ取得の場合はNext独自のgetStaticPropsを使って取得します😊
 export const getStaticProps = async () => {
@@ -26,6 +27,7 @@ export default function Home({ blog }) {
         blog.map((item, index) => (
           <div key={item.id}>
             <Link href={`blog/${item.id}`}>
+              <AiFillApple /><p>公開日：{item.publishedAt}</p>
               <h2>{item.title}</h2>
             </Link>
           </div>
